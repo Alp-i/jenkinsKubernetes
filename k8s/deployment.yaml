@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkinskubernetes-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jenkinskubernetes
+  template:
+    metadata:
+      labels:
+        app: jenkinskubernetes
+    spec:
+      containers:
+        - name: jenkinskubernetes-container
+          image: alperen09/jenkinskubernetes:latest
+          ports:
+            - containerPort: 8082
