@@ -15,5 +15,6 @@ spec:
       containers:
         - name: jenkinskubernetes-container
           image: alperen09/jenkinskubernetes:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8082
